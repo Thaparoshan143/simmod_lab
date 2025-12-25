@@ -8,4 +8,4 @@ In practice all the random number generated from machine are from algorithm and 
 All we can do is create a good pseudo random generator & some of them are as below..
 */
 
-#include <pserandgen/Linearcong.hpp>
+#include <PRNG/Linearcong.hpp>

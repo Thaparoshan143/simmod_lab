@@ -3,7 +3,7 @@
 #pragma once
 
 #include <Types.hpp>
-#include <pserandgen/IRandom.hpp>
+#include <PRNG/IRandom.hpp>
 
 #define DEFAULT_MULTIPLIER 8
 #define DEFAULT_ADDITIVE 1
