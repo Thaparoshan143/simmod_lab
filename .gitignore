@@ -1,0 +1,12 @@
+
+# basic ignore
+.vscode
+.DS_Store
+.env
+
+# premake ignores
+*.make
+Makefile
+bin
+obj
+
