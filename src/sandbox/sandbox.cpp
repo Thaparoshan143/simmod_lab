@@ -1,6 +1,6 @@
 #include <Types.hpp>
 #include <Utils.hpp>
-#include <pserandgen/Random.hpp>
+#include <PRNG/Random.hpp>
 
 #define RANDOM_NUM_COUNT 10
 #define RANDOM_MAX_VALUE 100
