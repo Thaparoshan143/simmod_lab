@@ -9,3 +9,4 @@ All we can do is create a good pseudo random generator & some of them are as bel
 */
 
 #include <PRNG/Linearcong.hpp>
+#include <PRNG/Comblinearcong.hpp>

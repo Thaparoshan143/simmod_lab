@@ -7,7 +7,8 @@
 
 int main(int argc, char* argv[]) {
 
-    auto randGenerator = LinearCongRNGen();
+    // auto randGenerator = LinearCongRNGen();
+    auto randGenerator = CombLinearCongRNGen();
     randGenerator.Init(RANDOM_MAX_VALUE);
 
     auto randNums = randGenerator.NextFew(RANDOM_NUM_COUNT);
