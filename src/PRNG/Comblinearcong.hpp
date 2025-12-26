@@ -9,21 +9,15 @@
 
 /**
     Brief details
-    Sequence is produced between 0 to m-1 (range given) using recursive relation as follows
-    X(i+1) = (aX(i) + c) mode m, for i=0,1,2,..
+    Sequence is produced between 0 to m-1 (range given) using recursive relation of multiple linear cong. generator as follows
+    X(i) = summation from j=1 to k [(-1)^(j-1) * X(i, j)] mod m
+    where, k defined the number of linear cong. generator used.
 
-    - The initial integer X(0) is known as seed
-    - a is multiplier
-    - c is increment
-    - m is the modulus (defined by range)
+    - X(i, j) are the ith output from different multiplication congruential (linear)
 
-    #### Limitation: only non-negative integer random number between 0 to m-1, also repeats & breaks for different inital cond. like when c=0 & seed=0 (i.e only 0 sequence).. likewise same sequence (i.e only 42..)
-
-    @cases: 
-    1. a = 1 then additive, 
-    2. c = 0 multiplicative,
-    3. a > 1 & c > 0 mixed type
-
+    Normally, random number is calculated as:
+    R(i)    = X(i) / m(j), if X(i) > 0
+            = (m(j) - 1)/m(j), if X(i) = 0
 */
 class CombLinearCongRNGen: public IRandomNumberGenerator<uint>
 {
