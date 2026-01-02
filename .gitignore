@@ -10,3 +10,6 @@ Makefile
 bin
 obj
 
+tmp
+log
+
