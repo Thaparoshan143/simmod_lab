@@ -136,7 +136,7 @@ const dComplex realNum(1, 0);
 #define LINE_WIDTH 2
 
 #define WIN_SIZE_X 1200
-#define WIN_SIZE_Y 800
+#define WIN_SIZE_Y 400
 
 
 int main(int argc, char* argv[])
@@ -171,7 +171,7 @@ int main(int argc, char* argv[])
 
     // frequency response analysis
     const uint freq_min { 0} ; // eq. to 10e0
-    const uint freq_max { 6 }; // in logspace so 10e6
+    const uint freq_max { 6 }; // in logspace 
     const uint samp_count { 1000 };
     auto freq_range = logspace(freq_min, freq_max, samp_count);
 
@@ -262,10 +262,16 @@ int main(int argc, char* argv[])
     subplot(1, 2, 0)->line_width(LINE_WIDTH);
     // might give some error but works..
     semilogx(freq_range, mag);
+    xlabel("frequency");
+    ylabel("magnitude");
+    title("Magnitude Plot");
 
     // phase plot
     subplot(1, 2, 1)->line_width(LINE_WIDTH);
     semilogx(freq_range, phase);
+    xlabel("frequency");
+    ylabel("phase");
+    title("Phase Plot");
 
     show();
 
