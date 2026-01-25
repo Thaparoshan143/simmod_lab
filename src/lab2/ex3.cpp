@@ -255,7 +255,7 @@ int main(int argc, char* argv[])
     PrintVec(phase, "Phase values");
     #endif
 
-    const pType A_in = 0.5;    
+    const pType A_in = 1.5;    
     const pType tp = 5;
 
     const pType freq_top = pow(10, freq_max);
@@ -267,13 +267,13 @@ int main(int argc, char* argv[])
     auto time = linspace(0, tp / freq_choice, fs_f*tp);
     // auto ang_freq = VecOpCb(time, [](const pType t) { return 2*pi*t; });
     auto V_in = VecOpCb(time, [tp, freq_choice](const pType t) { return sin(2*pi*freq_choice*t); });
-    VecScalMul(V_in, A_in);
+    V_in = VecScalMul(V_in, A_in);
     
     auto choice_mag = mag[freq_choice];
     auto choice_phase = phase_rad[freq_choice];
     auto V_out = VecOpCb(time, [tp, freq_choice, choice_phase](const pType t) { return sin(2*pi*freq_choice*t + choice_phase); });
-    VecScalMul(V_in, choice_mag);
-    VecScalMul(V_in, A_in);
+    V_out = VecScalMul(V_out, choice_mag);
+    V_out = VecScalMul(V_out, A_in);
     
     auto f = figure();
     f->size(WIN_SIZE_X, WIN_SIZE_Y);
