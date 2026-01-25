@@ -231,3 +231,75 @@ static Vector<T> GetComplexVecPhase(const Vector<Complex<T>>& vec, const bool is
 
     return res;
 }
+
+template<typename T>
+static T GetVectorMaxValue(const Vector<T>& vec)
+{
+    T maxVal;
+    for (const auto& item: vec)
+    {
+        if (item > maxVal)
+        {
+            maxVal = item;
+        }
+    }
+    return maxVal;
+}
+
+template<typename T>
+static T GetVectorMinValue(const Vector<T>& vec)
+{
+    T minVal { T(~1) };
+    for (const auto& item: vec)
+    {
+        if (item < minVal)
+        {
+            minVal = item;
+        }
+    }
+    return minVal;
+}
+
+/*
+returns new vector with normalized element in range of 0 to 1
+*/
+template<typename T, typename U>
+static Vector<T> GetVectorNormalize(const Vector<U>& vec)
+{
+    Vector<T> res {};
+    res.reserve(vec.size());
+
+    auto vecMax = GetVectorMaxValue(vec);
+    auto vecMin = GetVectorMinValue(vec);
+
+    // std::cout << vecMax << " .. " << vecMin << std::endl;
+    // std::cout << "*********" << std::endl;
+    for (const auto& item: vec)
+    {
+        res.push_back((float(item) - vecMin) / (vecMax - vecMin));
+    }
+
+    return res;
+}
+
+/*
+returns new vector with normalized element in range of 0 to 1 given n
+*/
+template<typename T, typename U>
+static Vector<T> GetVectorNormalize(const Vector<U>& vec, const T val)
+{
+    Vector<T> res {};
+    res.reserve(vec.size());
+
+    auto vecMax = GetVectorMaxValue(vec);
+    auto vecMin = GetVectorMinValue(vec);
+
+    // std::cout << vecMax << " .. " << vecMin << std::endl;
+    // std::cout << "*********" << std::endl;
+    for (const auto& item: vec)
+    {
+        res.push_back((float(item) / val));
+    }
+
+    return res;
+}
