@@ -6,4 +6,7 @@
 // #include <lab1/ex1-mi.cpp>
 // #include <lab1/ex1-mi-r.cpp>
 
-#include <lab2/ex1.cpp>
+// #include <lab2/ex1.cpp>
+// #include <lab2/ex2.cpp>
+#include <lab2/ex3.cpp>
+
