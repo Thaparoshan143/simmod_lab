@@ -303,3 +303,26 @@ static Vector<T> GetVectorNormalize(const Vector<U>& vec, const T val)
 
     return res;
 }
+
+template<typename T, typename U, typename Y>
+static Map<T, Vector<U>> GetVectorBinned(const Vector<Y>& vec, const Y val, const uint count)
+{
+    Map<T, Vector<U>> res {};
+    for (uint i=0;i<count;++i)
+    {
+        res[i] = Vector<U>();
+    }
+
+    T curInd { T(0) };
+
+    float indVal { 0 };
+
+    for (const auto& item: vec)
+    {
+        indVal = float(item) / val;
+        curInd = int(indVal * count);
+        res[curInd].push_back(item);
+    }
+
+    return res;
+}
