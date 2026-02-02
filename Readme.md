@@ -9,11 +9,11 @@ This repo is setup with [matplotplusplus](https://github.com/alandefreitas/matpl
 
 for machine with [brew](https://brew.sh/) installed.
 ```bash
-brew install matplotplusplus
+brew install matplotplusplus boost
 ```
 
 > [!NOTE]
-> Other dependencies are of matplotplusplus. like eg: opencv for images manipulation ...
+> only math (`chi_squared.hpp`) is used from boost in [lab3/ex1.cpp](src/lab3/ex1.cpp). Other dependencies are of matplotplusplus. like eg: opencv for images manipulation ...
 
 **How to use**
 - Clone the repo
