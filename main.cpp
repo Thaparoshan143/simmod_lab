@@ -10,7 +10,8 @@
 // #include <lab2/ex2.cpp>
 // #include <lab2/ex3.cpp>
 
-// #include <lab3/ex1.cpp>
+#include <lab3/ex1.cpp>
+// #include <lab3/ex2.cpp>
 
 
-#include <lab5/ex1.cpp>
+// #include <lab5/ex1.cpp>
